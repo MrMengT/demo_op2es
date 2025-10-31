@@ -1,0 +1,30 @@
+@Metadata.layer: #CUSTOMER
+annotate entity zc_umposche with
+{
+  @UI.facet: [
+     {
+        id:'sche',
+        label: 'Schedule info',
+        purpose: #STANDARD,
+        position: 10,
+        type: #IDENTIFICATION_REFERENCE
+     }
+  ]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  Scheduleline;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  Schedulelinedeliverydate;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  Schedulelineorderquantity;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  Purchaseorderquantityunit;
+
+}

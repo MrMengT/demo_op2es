@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service definition for um po'
+@ObjectModel.leadingEntity.name: 'zc_umpohead'
+define service zsrvd_umpo {
+  expose zc_umpohead as head;
+  expose zc_umpoitem as item;
+  expose zc_umposche as sche;
+}

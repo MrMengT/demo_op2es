@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+annotate entity zc_umpohead with
+{
+  @UI.facet: [
+  {
+      id:'head',
+      label: 'Head info',
+      purpose: #STANDARD,
+      position: 10,
+      type: #IDENTIFICATION_REFERENCE
+   },
+   {
+      id:'item',
+      label: 'Item info',
+      purpose: #STANDARD,
+      position: 20,
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_item'
+   }
+  ]
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20 } ]
+  @UI.identification: [{ position: 20 } ]
+  Purchaseorder;
+
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30 } ]
+  @UI.identification: [{ position: 30 } ]
+  Purchaseordertype;
+
+  @UI.selectionField: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40 } ]
+  @UI.identification: [{ position: 40 } ]
+  Companycode;
+
+  @UI.selectionField: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50 } ]
+  @UI.identification: [{ position: 50 } ]
+  Purchasingorganization;
+
+  @UI.lineItem: [{ position: 60 } ]
+  @UI.identification: [{ position: 60 } ]
+  Purchasinggroup;
+
+  @UI.selectionField: [{ position: 70 }]
+  @UI.lineItem: [{ position: 70 } ]
+  @UI.identification: [{ position: 70 } ]
+  Supplier;
+
+}

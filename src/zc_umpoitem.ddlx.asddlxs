@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+annotate entity zc_umpoitem with
+{
+  @UI.facet: [
+     {
+        id:'item',
+        label: 'Item info',
+        purpose: #STANDARD,
+        position: 10,
+        type: #IDENTIFICATION_REFERENCE
+     },
+     {
+        id:'sche',
+        label: 'Schedule info',
+        purpose: #STANDARD,
+        position: 20,
+        type: #LINEITEM_REFERENCE,
+        targetElement: '_sche'
+     }
+  ]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10}]
+  Purchaseorderitem;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20}]
+  Material;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30}]
+  Plant;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40}]
+  Orderquantity;
+
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50}]
+  Purchaseorderquantityunit;
+
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60}]
+  Netpriceamount;
+
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70}]
+  Documentcurrency;
+}

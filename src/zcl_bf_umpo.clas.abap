@@ -1,0 +1,21 @@
+CLASS zcl_bf_umpo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    CLASS-METHODS get_instance
+      RETURNING VALUE(ro_instance) TYPE REF TO zcl_bf_umpo.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_bf_umpo IMPLEMENTATION.
+  METHOD get_instance.
+
+  ENDMETHOD.
+
+ENDCLASS.

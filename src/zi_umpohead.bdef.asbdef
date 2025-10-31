@@ -1,0 +1,57 @@
+unmanaged implementation in class zbp_i_umpohead unique;
+strict ( 2 );
+with draft;
+
+define behavior for zi_umpohead alias head
+late numbering
+draft table ztumpohead_d
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _item { create; with draft; }
+
+  field ( readonly ) Purchaseorder;
+}
+
+define behavior for zi_umpoitem alias item
+late numbering
+draft table ztumpoitem_d
+lock dependent by _head
+authorization dependent by _head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Purchaseorder;
+  association _head { with draft; }
+  association _sche { create; with draft; }
+
+  field ( readonly : update ) Purchaseorderitem;
+}
+
+define behavior for zi_umposche alias sche
+late numbering
+draft table ztumposche_d
+lock dependent by _head
+authorization dependent by _head
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) purchaseorder, Purchaseorderitem;
+  field ( readonly : update ) Scheduleline;
+  association _head { with draft; }
+  association _item { with draft; }
+}
